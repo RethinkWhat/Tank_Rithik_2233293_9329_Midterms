@@ -82,13 +82,21 @@ public class MidExercise1 extends UnicastRemoteObject implements MidInterface1{
         return alphabetCount + " " + vowelsString + " " + vowelCount + " " + consonantsString + " " + consonantCount;
     }
 
+    /**
+     * Main Method
+     * @param args
+     */
     public static void main(String[] args) {
+        // port number as specified in requirements
         final int port = 1099;
+
         try {
+            //MidExercise1 object
             MidExercise1 stub = new MidExercise1();
+
+            // Create registry and rebind
             Registry registry = LocateRegistry.createRegistry(port);
             registry.rebind("midExercise1", stub);
-            System.out.println("RMI BOUND");
         } catch (RemoteException e) {
             e.printStackTrace();
         }
