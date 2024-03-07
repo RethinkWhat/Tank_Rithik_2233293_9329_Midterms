@@ -53,9 +53,9 @@ public class MidExercise1 extends UnicastRemoteObject implements MidInterface1{
         String vowels = "aeiouAeiou";
 
         // Will hold the list of vowels by order of occurrence in the string
-        String vowelsString = "";
+        StringBuilder vowelsString = new StringBuilder();
         // Will hold the list of consonants by order of occurrence in the string
-        String consonantsString = "";
+        StringBuilder consonantsString = new StringBuilder();
 
         // Iterate through all the characters in the string
         for (int x =0; x <s.length(); x++) {
@@ -70,11 +70,11 @@ public class MidExercise1 extends UnicastRemoteObject implements MidInterface1{
                 // If the vowel is a  vowel increment vowel count
                 if (vowels.contains(String.valueOf(character))) {
                     vowelCount += 1;
-                    vowelsString += character;
+                    vowelsString.append(character);
                 } else {
                     // Else increment consonant count
                     consonantCount += 1;
-                    consonantsString += character;
+                    consonantsString.append(character);
                 }
             }
         }
